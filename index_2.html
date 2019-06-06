@@ -33,14 +33,29 @@
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
-            $("#btn").click(function(){console.log($("tr td").length);});
+            function function1(){
+                data = document.getElementById("tf1").value.toLowerCase();
+                //console.log(data);
+                for(var i=0;3*i+1<$("td").length;i++)
+                {
+                    var a = $("td")[3*i+1].innerHTML.toLowerCase();
+                    //console.log(a);
+                    //console.log(a.search(data));
+                    if(a.search(data)==-1)
+                    {
+                        $("tr")[i+1].hidden = "true";
+                    }
+                }            
+                
+            }
+            
         </script>
     </head>
     <body>
     <center>
         <form>
             &nbsp; <input type = "text" id = "tf1" placeholder = "Enter Name"><br><br>
-            <input type = "button" value = "GO!" id = "btn">
+            <input type = "button" value = "GO!" id = "btn" onclick = "function1();">
         </form>
         <table id = "mytable">
                 <tr>
